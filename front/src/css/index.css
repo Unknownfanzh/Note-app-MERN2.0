@@ -43,6 +43,32 @@ h2 {
   min-height: 20vh;
 }
 
+.dashboard-link {
+  text-align: left;
+  display: flex;
+}
+
+.btn-logout {
+  background-color: #FFA229;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+}
+
+.homepage-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+}
+.homepage-div > p{
+  text-align: center;
+  font-size: 2rem;
+  color: #8F795D;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

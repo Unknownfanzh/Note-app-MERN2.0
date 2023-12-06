@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+
 import "../css/Signup.css";
 
 export default function Signup({ onSignupSuccess, setIsNewUser }) {

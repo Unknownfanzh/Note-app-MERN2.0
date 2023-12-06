@@ -10,7 +10,7 @@ export default function PleaseLogin() {
   };
 
   return (
-    <div className='welcome-div'>
+    <div className='homepage-div'>
       <p>Please log in first.</p>
       <button type='button' className='btn btn-link' onClick={handleGoHome}>Go to Home Page</button>
     </div>

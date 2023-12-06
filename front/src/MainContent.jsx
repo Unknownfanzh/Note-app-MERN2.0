@@ -64,16 +64,18 @@ function MainContent() {
     <>
       {isAuthenticated ? (
         <div className="welcome-div">
+          <div className="dashboard-logout">
           <h2 className="welcome">Welcome, {currentUser.username}</h2>
-          <Link to="/dashboard">Go to Dashboard</Link>
-
+          <Link className="dashboard-link" to="/dashboard">Get started, Go to Dashboard to create a note!</Link>
           <button
-            type="button"
-            className="btn btn-primary"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
+              type="button"
+              className="btn-logout btn btn-primary"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+            </div>
+
         </div>
       ) : null}
       <Routes>
@@ -83,7 +85,7 @@ function MainContent() {
             <Route
               path="/"
               element={
-                <div className="welcome-div">Welcome to the home page!</div>
+                <div className="homepage-div"><p>Welcome to the home page!</p></div>
               }
             />
           </>

@@ -33,6 +33,11 @@ function Header() {
                   Dashboard
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/dashboard" className="nav-link active">
+                  New Note
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

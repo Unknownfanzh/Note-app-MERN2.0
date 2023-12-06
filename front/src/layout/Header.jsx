@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../css/nav.css";
 function Header() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav id="nav" className="navbar navbar-expand-lg ">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Notes
+          <a className="nav-logo navbar-brand" href="#">
+            Note App
           </a>
           <button
             className="navbar-toggler"

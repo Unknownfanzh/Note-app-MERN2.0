@@ -38,7 +38,7 @@ function AddNote({ handleAddNote }) {
       ></textarea>
       <div className="note-footer">
         <small>{characterLimit - description.length} Remaining</small>
-        <button className="save" onClick={handleSaveClick}>
+        <button className="btn-save" onClick={handleSaveClick}>
           Save
         </button>
       </div>

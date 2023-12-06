@@ -5,21 +5,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  color: #FFA229;
+  font-family: 'Poiret One', sans-serif;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .app-title {
-  text-align: center;
+  text-align: left;
   font-size: 4rem;
   margin-bottom: 0rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .app-description {
-  text-align: center;
+  text-align: left;
   font-size: 1.5rem;
   margin-bottom: 0rem;
+  color: #8F795D;
 }
 
+.welcome {
+    text-align: left;
+    color: #FFA229;
+}
 .welcome-div {
   display: flex;
   flex-direction: column;
@@ -70,19 +85,19 @@ code {
   margin: 0%;
 }
 .note.new {
-  background-color: #67d7cc;
+  background-color: #D2F8FA;
 }
 
 textarea {
   border: none;
   resize: none;
-  background-color: #67d7cc;
+  background-color: #D2F8FA;
 }
 
 .note-title-input {
   border: none;
   resize: none;
-  background-color: #67d7cc;
+  background-color: #D2F8FA;
 }
 
 textarea:focus {
@@ -102,7 +117,7 @@ textarea:focus {
 }
 
 .note {
-  background-color: #fef68a;
+  background-color: #D2F8FA;
   border-radius: 10px;
   padding: 1rem;
   min-height: 290px;
@@ -123,23 +138,32 @@ textarea:focus {
   cursor: pointer;
 }
 
-.search {
-  display: flex;
-  align-items: center;
-  background-color: rgb(233, 233, 233);
-  border-radius: 10px;
-  padding: 5px;
-  margin-bottom: 1.5em;
-}
-
-.search input {
+.btn-delete {
+  background-color: #FFA229;
   border: none;
-  background-color: rgb(233, 233, 233);
-  width: 100%;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
 }
 
-.search input:focus {
-  outline: none;
+.btn-edit {
+  background-color: #FFA229;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+
+.btn-update {
+  background-color: #FFA229;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+
+.btn-save {
+  background-color: #FFA229;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
 }
 
 /*--------------------------------------------------------------
@@ -147,9 +171,9 @@ textarea:focus {
 --------------------------------------------------------------*/
 footer {
   text-align: center;
-  color: #fff;
+  color: #D2F8FA;
   padding: 25px 0;
-  background: #0062d3;
+  background: #548CFF;
   margin-top: 100px;
 }
 

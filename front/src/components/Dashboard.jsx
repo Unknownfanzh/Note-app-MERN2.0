@@ -4,7 +4,7 @@ import NotesList from "./NotesList";
 import "../css/Dashboard.css";
 function Dashboard() {
   return (
-    <div className="container">
+    <div className="notelist">
       <NotesList />
     </div>
   );

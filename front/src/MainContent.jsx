@@ -58,24 +58,33 @@ function MainContent() {
   const handleSuccessfulAuth = (user) => {
     setIsAuthenticated(true);
     setCurrentUser(user);
+    navigate("/dashboard"); // Navigate to the dashboard page
   };
 
   return (
     <>
       {isAuthenticated ? (
         <div className="welcome-div">
-          <div className="dashboard-logout">
-          <h2 className="welcome">Welcome, {currentUser.username}</h2>
-          <Link className="dashboard-link" to="/dashboard">Get started, Go to Dashboard to create a note!</Link>
-          <button
-              type="button"
-              className="btn-logout btn btn-primary"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
+          <div className="dashboard-content">
+            <div className="row">
+              <div className="col-10">
+                <h2 className="welcome">Welcome, {currentUser.username}</h2>
+                <Link className="dashboard-link" to="/dashboard">
+                  Get started, Go to Dashboard to create a note!
+                </Link>
+              </div>
+              <div className="col-2 btn-logout-div">
+                <button
+                  type="button"
+                  role="button"
+                  className="btn-logout btn btn-primary"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
             </div>
-
+          </div>
         </div>
       ) : null}
       <Routes>
@@ -85,7 +94,9 @@ function MainContent() {
             <Route
               path="/"
               element={
-                <div className="homepage-div"><p>Welcome to the home page!</p></div>
+                <div className="homepage-div">
+                  <p>Welcome to the home page!</p>
+                </div>
               }
             />
           </>

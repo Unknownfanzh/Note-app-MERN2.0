@@ -74,6 +74,14 @@ export default function Login({ onLoginSuccess, setIsNewUser }) {
               />
               <label className="form-label">Password</label>
             </div>
+            
+            <button
+              type="submit"
+              role="button"
+              className="btn btn-primary btn-block mb-4 form-submit"
+            >
+              Sign in
+            </button>
             <div className="row mb-4">
               <div className="col">
                 <button
@@ -84,12 +92,6 @@ export default function Login({ onLoginSuccess, setIsNewUser }) {
                 </button>
               </div>
             </div>
-            <button
-              type="submit"
-              className="btn btn-primary btn-block mb-4 form-submit"
-            >
-              Sign in
-            </button>
           </form>
         </div>
       </div>

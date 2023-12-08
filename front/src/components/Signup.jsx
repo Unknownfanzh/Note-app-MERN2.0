@@ -65,9 +65,19 @@ export default function Signup({ onSignupSuccess, setIsNewUser }) {
               />
               <label className="form-label">Password</label>
             </div>
+            
+            <button
+              type="submit"
+              role="button"
+              className="btn btn-primary btn-block mb-4 form-submit"
+            >
+              Sign up
+            </button>
             <div className="row mb-4">
               <div className="col">
                 <button
+                  type="button"
+                  role="button"
                   onClick={() => setIsNewUser(false)}
                   className="btn btn-link"
                 >
@@ -75,12 +85,6 @@ export default function Signup({ onSignupSuccess, setIsNewUser }) {
                 </button>
               </div>
             </div>
-            <button
-              type="submit"
-              className="btn btn-primary btn-block mb-4 form-submit"
-            >
-              Sign up
-            </button>
           </form>
         </div>
       </div>

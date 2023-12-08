@@ -50,7 +50,7 @@ export default function Note({ note, handleDeleteNote, handleEditNote }) {
           ></textarea>
           <div className="note-footer">
             <small>{characterLimit - editDescription.length} Remaining</small>
-            <button className="btn-update" onClick={onUpdate}>Update Note</button>
+            <button className="btn-update" role="button" onClick={onUpdate}>Update Note</button>
           </div>
         </div>
       ) : (
@@ -64,8 +64,8 @@ export default function Note({ note, handleDeleteNote, handleEditNote }) {
           <div className="note-footer">
             <small>{formatDate(note.date)}</small>
             <div>
-              <button className="btn-delete" onClick={() => handleDeleteNote(note._id)}>Delete</button>
-              <button className="btn-edit" onClick={onEdit}>Edit</button>
+              <button className="btn-delete" role="button" onClick={() => handleDeleteNote(note._id)}>Delete</button>
+              <button className="btn-edit" role="button" onClick={onEdit}>Edit</button>
             </div>
           </div>
         </div>

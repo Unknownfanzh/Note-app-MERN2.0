@@ -45,8 +45,10 @@ function App() {
         <h1 className="app-title">Note App</h1>
         <h2 className="app-description">Your Thoughts, Noted.</h2>
         <h2 className="app-description">Your Tasks, Managed.</h2>
-        <div className="App">
-          <MainContent />
+        <div className="container">
+          <div className="App">
+            <MainContent />
+          </div>
         </div>
       
       <Footer />

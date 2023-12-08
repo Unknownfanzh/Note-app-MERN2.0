@@ -1,10 +1,10 @@
 #nav {
-    background-color: #548CFF;
-    --bs-navbar-active-color: #D2F8FA;
+    background-color: #F2C1B6;
+    --bs-navbar-active-color: #354040;
 }
 
 .nav-logo {
-    color: #FFA229;
+    color: #354040;
     font-family: 'Poiret One', sans-serif;
     font-weight: 1000;
     font-size: 2rem;

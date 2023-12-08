@@ -69,9 +69,7 @@ function MainContent() {
             <div className="row">
               <div className="col-10">
                 <h2 className="welcome">Welcome, {currentUser.username}</h2>
-                <Link className="dashboard-link" to="/dashboard">
-                  Get started, Go to Dashboard to create a note!
-                </Link>
+                <p className="instruction">To create a new note, enter title and description in the yellow note list</p>
               </div>
               <div className="col-2 btn-logout-div">
                 <button
@@ -96,6 +94,9 @@ function MainContent() {
               element={
                 <div className="homepage-div">
                   <p>Welcome to the home page!</p>
+                  <Link className="dashboard-link" to="/dashboard">
+                  Get started, Go to Dashboard to create a note!
+                </Link>
                 </div>
               }
             />

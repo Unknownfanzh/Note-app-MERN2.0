@@ -1,0 +1,43 @@
+.welcome {
+  color: #354040;
+  font-weight: 800;
+}
+
+.welcome-div {
+  flex-direction: column;
+
+  min-height: 20vh;
+}
+
+.instruction {
+  color: #354040;
+  font-weight: 800;
+}
+
+.dashboard-content {
+  flex-direction: column;
+
+  min-height: 20vh;
+}
+
+.dashboard-link {
+  text-align: left;
+  display: flex;
+}
+
+.btn-logout-div {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.btn-logout {
+  text-align: right;
+  background-color: #f2c6a0;
+  --bs-btn-hover-bg: #5077c6;
+  color: #354040;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+}

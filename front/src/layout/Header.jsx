@@ -23,11 +23,7 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link to="./" className="nav-link active">
-                  Home
-                </Link>
-              </li>
+              
               <li className="nav-item">
                 <Link to="/dashboard" className="nav-link active">
                   Dashboard

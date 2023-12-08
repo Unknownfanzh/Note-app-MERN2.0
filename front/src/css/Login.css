@@ -1,0 +1,51 @@
+.form-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; /* vh stands for viewport height */
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-title > h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.form-div {
+  background-color: #f2c1b6;
+  width: 500px;
+  padding: 1.5rem;
+  border: 2px solid #f2c1b6;
+  border-radius: 5px;
+}
+
+.form-submit {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  --bs-btn-hover-bg: black;
+  color: #354040;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-modal {
+  background-color: #f2c6a0;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+}
+
+.btn-link {
+  color: #354040;
+  text-decoration: underline;
+}

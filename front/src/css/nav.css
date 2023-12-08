@@ -1,11 +1,16 @@
 #nav {
-    background-color: #F2C1B6;
-    --bs-navbar-active-color: #354040;
+  background-color: #f2c1b6;
+  --bs-navbar-active-color: #354040;
 }
 
 .nav-logo {
-    color: #354040;
-    font-family: 'Poiret One', sans-serif;
-    font-weight: 1000;
-    font-size: 2rem;
+  color: #354040;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 1000;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #354040;
+  font-weight: bold;
 }

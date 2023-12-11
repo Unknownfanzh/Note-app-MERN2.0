@@ -1,7 +1,7 @@
 # Notes App 📝
 
 The Notes App is a productivity tool designed to help users keep track of their to-do lists and daily tasks in an organized and efficient manner. This application aims to improve productivity by enabling users to create and manage their notes effectively.
-![3](https://raw.githubusercontent.com/Unknownfanzh/Note-app-MERN/main/thumbnail/project3screenshot.gif)
+![3](https://raw.githubusercontent.com/Unknownfanzh/Note-app-MERN2.0/main/thumbnail/project4screenshot.gif)
 
 - Author: Fan Zhou & Tianjing(Jill) Liu
 - Design Doc: https://docs.google.com/document/d/1EAsFKTKxo2EM_0I8KcAOXx2xk75Sw6-ow8CJ0O4uYco/edit?usp=sharing

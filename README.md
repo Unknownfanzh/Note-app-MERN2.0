@@ -57,7 +57,7 @@ The Notes App is a productivity tool designed to help users keep track of their 
 
 ### Color Palette:
 
-![color palette](Image URL)
+![color palette](https://github.com/Unknownfanzh/Note-app-MERN2.0/blob/J_branch/thumbnail/AdobeColor-My%20Color%20Blind%20Safe%20Theme.jpeg)
 
 - **summary**: Theme extracted from a scenery photo capturing beautiful California sunset using Adobe Color. The color palette is designed to be visually appealing, consistent, and accessible.
 

@@ -49,6 +49,26 @@ The Notes App is a productivity tool designed to help users keep track of their 
 - **Fetch API**: Used for making requests to the backend.
 - **Local Storage**: Utilized for storing user authentication tokens and other pertinent data client-side.
 
+## Rationale Behind Design
+
+### Typography:
+
+- **Poiret One&Montserrat**: Poiret One is known for its geometric form and stylized Art Deco appearance. It can serve well for headings and titles due to its distinctive and decorative nature. Montserrat, on the other hand, is clean, contemporary, and highly readable. It is a great choice for body text as it ensures excellent readability on digital screens. It also pairs well with Poiret One, providing a nice contrast between the decorative headings and the straightforward nature of body text. Together, these fonts can establish a visual hierarchy that both engages users and directs them effortlessly through the content, creating a seamless user experience.
+
+### Color Palette:
+
+![color palette](Image URL)
+
+- **summary**: Theme extracted from a scenery photo capturing beautiful California sunset using Adobe Color. The color palette is designed to be visually appealing, consistent, and accessible.
+
+- **Color Harmony**: The color palette consists of a balanced combination of cool and warm tones. The deep blue (#5077C6) serves as the primary color, complemented by a subdued teal (#354040) for contrast. The warm tones, such as the peachy (#F2C1B6) and pastel blue (#7A98BF), add vibrancy without overwhelming the overall harmony.
+
+- **Contrast and Readability**: The dark teal (#354040) provides a high contrast background against which text and content can be easily readable. This ensures good readability, a crucial aspect of accessibility.
+
+- **Accessibility**: The color palette aims to be inclusive by incorporating a diverse set of colors. The lighter pastel blue (#7A98BF) and pale peach (#F2C1B6) is used for highlighting important elements or interactive components, enhancing accessibility for users with visual impairments.
+
+- **Consistency**: The color palette maintains consistency by adopting a coherent set of tones. This consistency creates a unified visual identity across the design, making it aesthetically pleasing and easier for users to navigate and understand.
+
 ## Getting Started 🚀
 
 ### Prerequisites 📋
@@ -94,7 +114,7 @@ The website is hosted using heroku and can be accessed
 Ensure you have a .env file in the root directory with the following content:
 
 ```
-MONGODB_PASSWAOORD = <Your MONGODB password>
+MONGODB_URL = mongodb+srv://<username>:<password>@cluster0.iwjxwdy.mongodb.net/?retryWrites=true&w=majority
 ```
 
 ## License

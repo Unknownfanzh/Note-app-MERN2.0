@@ -130,7 +130,7 @@ router.get("/notes", isAuthenticated, async (req, res) => {
       .sort({ date: -1 })
       .toArray();
     if (notes) {
-      await client.set(cacheKey, JSON.stringify(notes), "EX", 10); // Added expiration time
+      await client.set(cacheKey, JSON.stringify(notes), "EX", 3600); // Added expiration time
     }
     res.status(200).json(notes);
   } catch (error) {

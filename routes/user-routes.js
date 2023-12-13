@@ -127,6 +127,7 @@ router.get("/notes", isAuthenticated, async (req, res) => {
     const notes = await db
       .collection("notes")
       .find({ userId })
+      .sort({ date: -1 })
       .toArray();
     if (notes) {
       await client.set(cacheKey, JSON.stringify(notes), "EX", 10); // Added expiration time

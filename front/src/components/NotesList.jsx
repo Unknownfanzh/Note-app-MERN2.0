@@ -87,6 +87,8 @@ function NotesList() {
 
   return (
     <div className="notes-list">
+      <AddNote handleAddNote={handleAddNote} />
+
       {notes.map((note) => (
         <Note
           key={note._id}
@@ -95,8 +97,6 @@ function NotesList() {
           handleEditNote={handleEditNote}
         />
       ))}
-
-      <AddNote handleAddNote={handleAddNote} />
     </div>
   );
 }

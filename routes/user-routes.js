@@ -5,7 +5,17 @@ import { getDB } from "../db/db.js";
 import { ObjectId } from "mongodb";
 import redis from "redis";
 
-const client = redis.createClient(); // Connects to 127.0.0.1:6379 by default
+const client = redis.createClient({
+  rootNodes: [
+    {
+        url: process.env.REDIS_URL
+    },
+    {
+        url: 'redis://127.0.0.1:16379'
+    },
+    // ...
+]
+}); 
 await client.connect();
 client.on("error", (err) => console.log("Redis Client Error", err));
 const router = express.Router();

@@ -6,7 +6,7 @@ The Notes App is a productivity tool designed to help users keep track of their 
 - Author: Fan Zhou & Tianjing(Jill) Liu
 - Design Doc: https://docs.google.com/document/d/1cpVYljGOf2etDlA2ntcTCGRyWmyNYsirmWUuaHKzMBA/edit?usp=sharing
 - Prensentation slides: https://docs.google.com/presentation/d/1Wdpv4H9BMJ5Q-NDZ-RW-QdqRm7l7d_twfPBeIYZ-_UI/edit?usp=sharing
-- Video walkthrough:
+- Video walkthrough: https://youtu.be/c6mJK_Axtb0
 - Wireframe: https://www.figma.com/file/nCSx5wPr0r9YSlrsKdWJeH/Untitled?type=design&node-id=0%3A1&mode=design&t=sdfAv3Z2CGkbDQjJ-1
 - A project from course CS5610: https://johnguerra.co/classes/webDevelopment_fall_2023/
 - Deployed here: https://note-app-2-0.onrender.com

@@ -4,10 +4,10 @@ The Notes App is a productivity tool designed to help users keep track of their 
 ![3](https://raw.githubusercontent.com/Unknownfanzh/Note-app-MERN2.0/main/thumbnail/project4screenshot.gif)
 
 - Author: Fan Zhou & Tianjing(Jill) Liu
-- Design Doc: https://docs.google.com/document/d/1EAsFKTKxo2EM_0I8KcAOXx2xk75Sw6-ow8CJ0O4uYco/edit?usp=sharing
-- Prensentation slides: https://docs.google.com/presentation/d/1F8g2TwDtAXDviRC96ALxGB-28JaY40gZ0ufvjpiZ9Lc/edit?usp=sharing
-- Video walkthrough: https://youtu.be/PPkf1ogqBo4
-- Wireframe: https://www.figma.com/file/47vn51YwOa816EISPfVTaj/project-3---notes-app?type=design&node-id=0%3A1&mode=design&t=f3t9pXtl6bT0n8Tj-1
+- Design Doc: https://docs.google.com/document/d/1cpVYljGOf2etDlA2ntcTCGRyWmyNYsirmWUuaHKzMBA/edit?usp=sharing
+- Prensentation slides: https://docs.google.com/presentation/d/1Wdpv4H9BMJ5Q-NDZ-RW-QdqRm7l7d_twfPBeIYZ-_UI/edit?usp=sharing
+- Video walkthrough:
+- Wireframe: https://www.figma.com/file/nCSx5wPr0r9YSlrsKdWJeH/Untitled?type=design&node-id=0%3A1&mode=design&t=sdfAv3Z2CGkbDQjJ-1
 - A project from course CS5610: https://johnguerra.co/classes/webDevelopment_fall_2023/
 - Deployed here: https://note-app-2-0.onrender.com
 - Fan's Home page: https://unknownfanzh.github.io/Personal_homepage/
@@ -25,6 +25,20 @@ The Notes App is a productivity tool designed to help users keep track of their 
 - **Interactive UI**:
   - View all notes in a visually appealing format
   - Edit and delete buttons for each individual note
+
+## Features2.0 (New Release)
+
+- **Reversed Displaying Order**:
+  - Displaying the most recent notes at the forefront
+  - Reposition the editing area to precede saved notes
+- **Scalability**:
+  - Using Redis for cache to improve overall application performance
+- **Accessibility**:
+  - Full accessibility for screen readers and comprehensive keyboard navigation
+  - Implement placeholders to enhance usability, providing users with visual cues
+- **Visual Optimization**:
+  - Typography and color palette
+  - Redesign layout to ensure alignment and proximity principles
 
 ## Technologies Used
 
@@ -48,6 +62,7 @@ The Notes App is a productivity tool designed to help users keep track of their 
 
 - **Fetch API**: Used for making requests to the backend.
 - **Local Storage**: Utilized for storing user authentication tokens and other pertinent data client-side.
+- **Redis**: Implement Redis to cache data, reducing the load on the MongoDB database and improving overall application performance.
 
 ## Rationale Behind Design
 
@@ -77,6 +92,14 @@ Ensure you have Node.js installed on your machine.
 
 Ensure you have a Mongo server running on localhost: 27017, or configured in the `MONGO_URI` environment variable.
 
+## Configuration 🛠️
+
+Ensure you have a .env file in the root directory with the following content:
+
+```
+MONGODB_URL = mongodb+srv://<username>:<password>@cluster0.iwjxwdy.mongodb.net/?retryWrites=true&w=majority
+```
+
 ### Installation
 
 1. Clone the repository:
@@ -97,7 +120,20 @@ cd
 npm install
 ```
 
-4. Start the server:
+4. Install redis server
+
+```
+brew install redis-server
+
+```
+
+5. Start redis server
+
+```
+redis_server
+```
+
+6. Start the server:
 
 ```
 npm start
@@ -107,15 +143,7 @@ this will start the backend server, running on http://localhost:3000
 
 ## Deployment
 
-The website is hosted using heroku and can be accessed
-
-## Configuration 🛠️
-
-Ensure you have a .env file in the root directory with the following content:
-
-```
-MONGODB_URL = mongodb+srv://<username>:<password>@cluster0.iwjxwdy.mongodb.net/?retryWrites=true&w=majority
-```
+The website is hosted using render and can be accessed at https://note-app-2-0.onrender.com
 
 ## License
 

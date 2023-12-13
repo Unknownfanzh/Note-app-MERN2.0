@@ -3,6 +3,11 @@ import passport from "../passport/passport.js";
 import bcrypt from "bcryptjs";
 import { getDB } from "../db/db.js";
 import { ObjectId } from "mongodb";
+import redis from "redis";
+
+const client = redis.createClient(); // Connects to 127.0.0.1:6379 by default
+await client.connect();
+client.on("error", (err) => console.log("Redis Client Error", err));
 const router = express.Router();
 
 // ... (other routes)
@@ -94,75 +99,81 @@ router.post("/add-note", isAuthenticated, async (req, res) => {
   console.log(`Received userId: ${userId}`);
 
   const newList = { userId, title, description, date: new Date(`${date}`) };
-  const result = await db
-    .collection("notes")
-    .insertOne(newList)
-    .then((result) => {
-      res.status(201).send("List created");
-    })
-    .catch((error) => {
-      res.status(500).send("List creation failed");
-    });
+  try {
+    const result = await db.collection("notes").insertOne(newList);
+    await client.del(`notes:${userId}`); // Invalidate cache
+    res.status(201).send("List created");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 // Route for getting the lists of the logged-in user (protected route)
 router.get("/notes", isAuthenticated, async (req, res) => {
   const db = getDB();
+  const userId = req.user._id.toString();
+  const cacheKey = `notes:${userId}`;
+
   try {
-    if (!req.isAuthenticated()) {
-      return res.status(401).send("Unauthorized");
+    const cachedNotes = await client.get(cacheKey);
+    if (cachedNotes) {
+      return res.status(200).json(JSON.parse(cachedNotes));
     }
-
-    const userId = req.user._id.toString();
-    console.log(`User ID: ${userId}`);
-
-    const userNotes = await db.collection("notes").find({ userId }).toArray();
-    res.status(200).json(userNotes);
+    const notes = await db
+      .collection("notes")
+      .find({ userId })
+      .toArray();
+    if (notes) {
+      await client.set(cacheKey, JSON.stringify(notes), "EX", 10); // Added expiration time
+    }
+    res.status(200).json(notes);
   } catch (error) {
-    console.error("Error fetching user notes:", error);
+    console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
 
 router.delete("/notes/:noteId", isAuthenticated, async (req, res) => {
-    const db = getDB();
-    try {
-      const noteId = new ObjectId(req.params.noteId);
-      const userId = req.user._id.toString();
-      
-      const result = await db.collection("notes").findOneAndDelete({ _id: noteId, userId });
-      if (result) {
-        res.status(200).send("Note deleted successfully");
-      } else {
-        res.status(404).send("Note not found or unauthorized");
-      }
-    } catch (error) {
-      console.error("Error deleting note:", error);
-      res.status(500).send("Internal Server Error");
+  const db = getDB();
+  const noteId = new ObjectId(req.params.noteId);
+  const userId = req.user._id.toString();
+  const cacheKey = `notes:${userId}`;
+  try  {
+    const result = await db.collection("notes").deleteOne({ _id: noteId, userId });
+    if (result.deletedCount) {
+      await client.del(cacheKey); // Invalidate cache
+      res.status(200).send("Note deleted");
+    } else {
+      res.status(404).send("Note not found or unauthorized");
     }
-  });
+  } catch (error) {
+    console.error("Error deleting note:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 // ... (other routes as in your initial code)
 router.put("/notes/:noteId", isAuthenticated, async (req, res) => {
-    const db = getDB();
-    try {
-      const noteId = new ObjectId(req.params.noteId);
-      const userId = req.user._id.toString();
-      const { title, description } = req.body;
-  
-      const result = await db.collection("notes").findOneAndUpdate(
-        { _id: noteId, userId },
-        { $set: { title, description } },
-        { returnOriginal: false }
-      );
-  
-      if (result) {
-        res.status(200).json(result);
-      } else {
-        res.status(404).send("Note not found or unauthorized");
-      }
-    } catch (error) {
-      console.error("Error updating note:", error);
-      res.status(500).send("Internal Server Error");
+  const db = getDB();
+  const noteId = new ObjectId(req.params.noteId);
+  const userId = req.user._id.toString();
+  const { title, description } = req.body;
+  const cacheKey = `notes:${userId}`;
+  try {
+    const result = await db.collection("notes").updateOne(
+      { _id: noteId, userId },
+      { $set: { title, description } }
+    );
+    if (result.matchedCount) {
+      await client.del(cacheKey); // Invalidate cache
+      res.status(200).send("Note updated");
+    } else {
+      res.status(404).send("Note not found or unauthorized");
     }
-  });
+  } catch (error) {
+    console.error("Error updating note:", error);
+    res.status(500).send("Internal Server Error");
+  }
+  
+});
 export default router;

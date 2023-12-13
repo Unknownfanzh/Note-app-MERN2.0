@@ -9,7 +9,7 @@ export async function createUser(username, password) {
 }
 
 export async function findUserByUsername(username) {
-    return getDB().collection("users").findOne({ username });
+    return getDB().collection("users").findOne({ username });;
 }
 
 export async function findUserById(id) {

@@ -102,8 +102,16 @@ function NotesList() {
 }
 
 NotesList.propTypes = {
-  handleDeleteNote: PropTypes.func.isRequired,
-  handleEditNote: PropTypes.func.isRequired,
+  notes: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      date: PropTypes.string,
+    })
+  ),
+  handleDeleteNote: PropTypes.func,
+  handleEditNote: PropTypes.func,
 };
 
 export default NotesList;

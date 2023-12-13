@@ -5,7 +5,6 @@ import bodyParser from "body-parser";
 import passport from "./passport/passport.js";
 import { connectToDB } from "./db/db.js";
 import router from "./routes/user-routes.js";
-// import cors from "cors";
 import cookieParser from "cookie-parser";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -15,6 +14,8 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = 3000;
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

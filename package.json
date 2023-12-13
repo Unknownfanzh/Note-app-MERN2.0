@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "preinstall": "cd front && npm install && npm run build",
-    "start": "nodemon index.js",
+    "start": "redis-server & nodemon index.js",
+    "start-redis": "redis-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "initDB": "mongoimport -d notes-app -c users --jsonArray db/initialUsers.json"
   },
@@ -24,7 +25,8 @@
     "mongodb": "^6.2.0",
     "nodemon": "^3.0.1",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "redis": "^4.6.11"
   },
   "devDependencies": {
     "eslint": "^8.51.0",

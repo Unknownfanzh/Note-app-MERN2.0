@@ -35,6 +35,12 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, "front", "dist")));
 app.use("/api", router);
 
+/* All remaining requests return the React app, so it can handle routing
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "front", "dist", "index.html"));
+});
+*/
+
 (async () => {
   try {
     await connectToDB();
